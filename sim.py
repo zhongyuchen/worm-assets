@@ -24,10 +24,10 @@ def parse_xml(xml_file):
     return mjcf
 
 
-def make_mesh(mjcf, stl_file):
+def make_mesh(mjcf, stl_file, scale):
     if not stl_file.startswith('/'):
         stl_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'assets', stl_file)
-    mesh = etree.Element('mesh', attrib={'name': 'cuticle', 'file': stl_file})
+    mesh = etree.Element('mesh', attrib={'name': 'cuticle', 'file': stl_file, 'scale': '{} {} {}'.format(scale, scale, scale)})
     geom = etree.Element('geom', attrib={'type': 'mesh', 'mesh': 'cuticle'})
     mjcf.find('asset').append(mesh)
     mjcf.find('worldbody/body').append(geom)
@@ -40,15 +40,15 @@ def set_height(mjcf, height):
     return mjcf
 
 
-def worm(xml_file, stl_file, height=0.1):
+def worm(xml_file, stl_file, height=0.1, scale=1.):
     mjcf = parse_xml(xml_file)
-    mjcf = make_mesh(mjcf, stl_file)
+    mjcf = make_mesh(mjcf, stl_file, scale)
     mjcf = set_height(mjcf, height)
     return etree.tostring(mjcf, pretty_print=True)
 
 
 if __name__ == '__main__':
-    xml_str = worm('swimmer.xml', 'cuticle_rotated.stl', height=0.1)
+    xml_str = worm('swimmer.xml', 'cuticle_rotated.stl', height=0.1, scale=0.32)
     model = mujoco_py.load_model_from_xml(xml_str.decode('utf-8'))
     sim = mujoco_py.MjSim(model)
     viewer = mujoco_py.MjViewer(sim)
