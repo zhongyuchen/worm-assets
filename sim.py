@@ -13,10 +13,8 @@ def parse_xml(xml_file):
     # plane: set pos z=0
     geom = mjcf.find('worldbody/geom')
     geom.set('pos', '0 0 0')
-    # torso: set pos z=0.1
-    body = mjcf.find('worldbody/body')
-    body.set('pos', '0 0 0.1')
     # remove geom, joint, body
+    body = mjcf.find('worldbody/body')
     body.remove(body.find('geom'))
     for joint in body.findall('joint'):
         body.remove(joint)
@@ -36,14 +34,21 @@ def make_mesh(mjcf, stl_file):
     return mjcf
 
 
-def worm(xml_file, stl_file):
+def set_height(mjcf, height):
+    body = mjcf.find('worldbody/body')
+    body.set('pos', '0 0 {}'.format(height))
+    return mjcf
+
+
+def worm(xml_file, stl_file, height=0.1):
     mjcf = parse_xml(xml_file)
     mjcf = make_mesh(mjcf, stl_file)
+    mjcf = set_height(mjcf, height)
     return etree.tostring(mjcf, pretty_print=True)
 
 
 if __name__ == '__main__':
-    xml_str = worm('swimmer.xml', 'cuticle_rotated.stl')
+    xml_str = worm('swimmer.xml', 'cuticle_rotated.stl', height=0.1)
     model = mujoco_py.load_model_from_xml(xml_str.decode('utf-8'))
     sim = mujoco_py.MjSim(model)
     viewer = mujoco_py.MjViewer(sim)
