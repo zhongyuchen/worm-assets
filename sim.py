@@ -48,7 +48,7 @@ def worm(xml_file, stl_file, height=0.1, scale=1.):
 
 
 if __name__ == '__main__':
-    xml_str = worm('swimmer.xml', 'cuticle_rotated.stl', height=0.1, scale=0.32)
+    xml_str = worm('swimmer.xml', 'Cuticle_Rotated.stl', height=0.1, scale=0.32)
     model = mujoco_py.load_model_from_xml(xml_str.decode('utf-8'))
     sim = mujoco_py.MjSim(model)
     viewer = mujoco_py.MjViewer(sim)
