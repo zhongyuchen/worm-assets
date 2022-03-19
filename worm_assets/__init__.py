@@ -1,5 +1,5 @@
 import os
-import worm_3d.envs
+import worm_assets.envs
 
 
 def asset_path(filename):
