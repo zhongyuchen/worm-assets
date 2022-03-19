@@ -1,6 +1,16 @@
 # worm-3d
 A 3D model of C. elegans in MuJoCo
 
+## Installation
+* install the project in editable mode from local project path
+    ```
+    pip install -e .
+    ```
+* change local packages to be built in-place without first copying to a temporary directory
+    ```
+    pip install -e . --use-feature=in-tree-build
+    ```
+
 ## Sphere
 * built using Blender 3.0.1
 * based on an UV sphere: a = 1.25 and b = c = 0.1 (ellipsoid shaped), 100 segments, 50 rings
