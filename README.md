@@ -6,6 +6,9 @@ A 3D model of C. elegans in MuJoCo
 * based on an UV sphere with a = 1.25 and b = c = 0.1 (ellipsoid shaped)
 * model length = 2.5, the largest radius = 0.1 -> length:radius = 25:1
 * segmented into 25 segments with equal length of 0.1
+* each segment is a cylinder shaped mesh without top and bottom faces, so top and bottom faces are filled with F.
+* The faces pointing in the opposite direction of x-axis in Sphere.004 and Sphere.005 segments were filled with F, 
+but the exported meshes don't include that faces, so they are filled with Alt+F instead.
 
 ### Reference
 https://doi.org/10.3389/fncom.2012.00010
