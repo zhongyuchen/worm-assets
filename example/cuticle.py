@@ -1,12 +1,12 @@
 from lxml import etree
 import mujoco_py
-import worm_3d
+import worm_assets
 
 
 def parse_xml(xml_file):
     """ parse xml and clean it up """
     if not xml_file.startswith('/'):
-        xml_file = worm_3d.asset_path(xml_file)
+        xml_file = worm_assets.asset_path(xml_file)
     with open(xml_file, 'rb') as f:
         xml_str = f.read()
     mjcf = etree.fromstring(xml_str, parser=etree.XMLParser(remove_blank_text=True))
@@ -26,7 +26,7 @@ def parse_xml(xml_file):
 
 def make_mesh(mjcf, stl_file, scale):
     if not stl_file.startswith('/'):
-        stl_file = worm_3d.asset_path(stl_file)
+        stl_file = worm_assets.asset_path(stl_file)
     mesh = etree.Element('mesh', attrib={'name': 'cuticle', 'file': stl_file, 'scale': '{} {} {}'.format(scale, scale, scale)})
     geom = etree.Element('geom', attrib={'type': 'mesh', 'mesh': 'cuticle'})
     mjcf.find('asset').append(mesh)

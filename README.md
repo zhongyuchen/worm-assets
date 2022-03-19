@@ -1,5 +1,5 @@
-# worm-3d
-A 3D model of C. elegans in MuJoCo
+# worm-assets
+3D models of C. elegans for MuJoCo
 
 ## Installation
 * install the project in editable mode from local project path

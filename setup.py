@@ -2,11 +2,11 @@ from setuptools import setup, find_packages
 
 
 setup(
-    name='worm_3d',
+    name='worm_assets',
     version='0.0.1',
-    packages=[package for package in find_packages() if package.startswith('worm_3d')],
+    packages=[package for package in find_packages() if package.startswith('worm_assets')],
     package_data={
-        'worm_3d.envs.mujoco': [
+        'worm_assets.envs.mujoco': [
             'assets/*.stl',
             'assets/*.xml'
         ]
