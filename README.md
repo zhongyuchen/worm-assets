@@ -9,6 +9,7 @@ A 3D model of C. elegans in MuJoCo
 * each segment is a cylinder shaped mesh without top and bottom faces, so top and bottom faces are filled with F.
 * The faces pointing in the opposite direction of x-axis in Sphere.004 and Sphere.005 segments were filled with F, 
 but the exported meshes don't include that faces, so they are filled with Alt+F instead.
+* the object of each segment is exported in *.stl format, and with 'selection only' option turned on
 
 ### Reference
 https://doi.org/10.3389/fncom.2012.00010
