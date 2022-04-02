@@ -13,7 +13,7 @@
 
 ## Sphere
 * built using Blender 3.0.1
-* based on an UV sphere: a = 1.25 and b = c = 0.1 (ellipsoid shaped), 100 segments, 50 rings
+* based on an UV sphere: Segments=100, Rings=50, Rotation Y=90, Scale X=0.1, Y=0.1, Z=1.25
 * model length = 2.5, the largest radius = 0.1 -> length:radius = 25:1
 * segmented into 25 segments with equal length of 0.1: cuts at x = 1.25 - i * 0.1, 1 <= i <= 24
 * each segment is a cylinder shaped mesh without top and bottom faces, so top and bottom faces are filled with F.
