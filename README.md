@@ -26,6 +26,12 @@ https://doi.org/10.3389/fncom.2012.00010
 * The model approximates the tapered shape of the worm as a prolate ellipse.
 * C.elegans length = 1mm, the largest radius = 0.04mm -> length:radius = 25:1
 
+## Ellipsoid
+* the same specs as the above model: ellipse equation x**2/a**2 + y**2/b**2 = 1, a=1.25, b=0.1
+* segmented into 25 segments: cuts at x = (1.25 - i * 0.1) / (1 - b**2/a**2), 1<=i<=24
+* The faces pointing opposite x-axis in Ellipsoid.007 and Ellipsoid.009 segments were filled with F, 
+but the exported meshes don't include that faces, so they are filled with Alt+F instead.
+
 ## Virtual Worm
 * rotated so that the dorsal/ventral plane is parallel to x/y plane
 
