@@ -35,8 +35,9 @@ but the exported meshes don't include that faces, so they are filled with Alt+F 
 ## Virtual Worm
 * rotated so that the dorsal/ventral plane is parallel to x/y plane
 
-## Connectomes
-* WormWiring: Emmons laboratory data https://wormwiring.org/pages/emmonslab.html
-
 ### Reference
 * The 3D model of C. elegans is based on the blender model from [the VirtualWorm project](http://caltech.wormbase.org/virtualworm/)
+
+## Connectomes
+* WormWiring: Emmons laboratory data https://wormwiring.org/pages/emmonslab.html
+* Hermaphrodite and Male Connectomes (Adjacency Matrices), Adults (corrected July 2020) https://wormwiring.org/pages/adjacency.html
