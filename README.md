@@ -2,14 +2,7 @@
 3D models of C. elegans for MuJoCo
 
 ## Installation
-* install the project in editable mode from local project path
-    ```
-    pip install -e .
-    ```
-* change local packages to be built in-place without first copying to a temporary directory
-    ```
-    pip install -e . --use-feature=in-tree-build
-    ```
+* install the project in editable mode from local project path `pip install -e .`
 
 ## Sphere
 * built using Blender 3.0.1
