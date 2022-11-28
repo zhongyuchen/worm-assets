@@ -34,6 +34,7 @@ but the exported meshes don't include that faces, so they are filled with Alt+F 
 ## Connectomes
 * WormWiring: Emmons laboratory data https://wormwiring.org/pages/emmonslab.html
 * Hermaphrodite and Male Connectomes (Adjacency Matrices), Adults (corrected July 2020) https://wormwiring.org/pages/adjacency.html
+* Cell types: https://doi.org/10.1038/s41586-019-1352-7 Supplementary Information 4
 
 ## Polarities
 * https://doi.org/10.1371/journal.pcbi.1007974
