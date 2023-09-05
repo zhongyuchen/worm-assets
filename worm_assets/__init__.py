@@ -20,3 +20,7 @@ def cell_type_path():
 
 def polarity_path(filename):
     return os.path.join(os.path.dirname(__file__), 'polarities', filename)
+
+
+def file_path(folder, filename):
+    return os.path.join(os.path.dirname(__file__), folder, filename)
